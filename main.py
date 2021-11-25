@@ -1,8 +1,9 @@
-
+import model
 
 if __name__ == "__main__":
     print('Start')
     # Download models
+    google_300 = model.Model('word2vec-google-news-300')    
     # Download datasets
     # Evaluate model 1 word2vec-google-news-300
     # Evaluate model 2 e.g. twitter-300
