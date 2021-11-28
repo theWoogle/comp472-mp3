@@ -1,6 +1,8 @@
 import model
 import numpy as np
 from logger import Logger
+import utils
+import numpy as np
 
 if __name__ == "__main__":
 
@@ -20,16 +22,24 @@ if __name__ == "__main__":
     synonyms = np.loadtxt('data/synonyms.csv', dtype=str, delimiter=',', skiprows=1)
 
     # Evaluate model 1 word2vec-google-news-300
-    google_300.evaluate(synonyms, 4)
-
+    accuracy = google_300.evaluate(synonyms, 4)
+    models_accuracy = np.array(accuracy)
     #Task2
     # Evaluate model 2  glove-twitter-200
-    twitter_200.evaluate(synonyms,4)
+    accuracy = twitter_200.evaluate(synonyms,4)
+    models_accuracy = np.append(models_accuracy, accuracy)
     # Evaluate model 3 glove-wiki-gigaword-200
-    wiki_200.evaluate(synonyms,4)
+    accuracy = wiki_200.evaluate(synonyms,4)
+    models_accuracy = np.append(models_accuracy, accuracy)
     # Evaluate model 4 glove-twitter-100
-    twitter_100.evaluate(synonyms,4)
+    accuracy = twitter_100.evaluate(synonyms,4)
+    models_accuracy = np.append(models_accuracy, accuracy)
     # Evaluate model 5 glove-wiki-gigaword-100
-    wiki_100.evaluate(synonyms,4)
+    accuracy = wiki_100.evaluate(synonyms,4)
+    models_accuracy = np.append(models_accuracy, accuracy)
 
     # Plot results
+    models=np.array(['google_300','twitter-200','wiki_200', 'twitter_100','wiki_100'])
+    print(models)
+    print(models_accuracy)
+    utils.Plotter(models,models_accuracy)

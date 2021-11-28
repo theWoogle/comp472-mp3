@@ -64,4 +64,4 @@ class Model():
                 dataset[i, 0], dataset[i, 1], dataset[i, idx_guess+2], label)
 
         self.l.append_analysis_csv(self)
-        return
+        return self.C/self.V
