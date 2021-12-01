@@ -14,4 +14,6 @@ class Plotter():
 
     def plot(self):
         plt.bar(self.x_models, self.y_accuracies)
-        plt.show()
+        # plt.show()
+        plt.savefig('performance.pdf')
+
