@@ -37,8 +37,7 @@ class Model():
         cosines = np.empty((len(dataset), feature_len))
         for i in range(len(dataset)):
             for j in range(feature_len):
-                # avoids key error when word is not in vocabulary
-                # FIXME change from try-except to check if word is in voc
+                # handles key error when word is not in vocabulary
                 try:
                     cosines[i, j] = round(self.model.similarity(
                         dataset[i, 0], dataset[i, 2+j]), 4)
