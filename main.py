@@ -10,8 +10,12 @@ if __name__ == "__main__":
     synonyms = np.loadtxt('data/synonyms.csv', dtype=str, delimiter=',', skiprows=1)
 
 
+    # model_names = ['word2vec-google-news-300', 'glove-twitter-200', 'glove-wiki-gigaword-200',
+    #                'glove-twitter-100', 'glove-wiki-gigaword-100']
+
     model_names = ['word2vec-google-news-300', 'glove-twitter-200', 'glove-wiki-gigaword-200',
-                   'glove-twitter-100', 'glove-wiki-gigaword-100']
+                   'glove-twitter-100', 'glove-twitter-50']
+
     models = []
     models_accuracy=[]
     for name in model_names:
@@ -20,7 +24,9 @@ if __name__ == "__main__":
         accuracy = model.evaluate(synonyms,4)
         models_accuracy.append(np.array(accuracy))
 
-    models_n = ['google300', 'twitter200', 'wiki200', 'twitter100', 'wiki100','humangs','randb']
+    # models_n = ['google300', 'twitter200', 'wiki200', 'twitter100', 'wiki100','humangs','randb']
+
+    models_n = ['google300', 'twitter200', 'wiki200', 'twitter100', 'twitter50', 'humangs', 'randb']
     models_accuracy.append(0.855)
     models_accuracy.append(0.25)
     utils.Plotter(models_n, models_accuracy)
