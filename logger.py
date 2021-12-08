@@ -18,4 +18,4 @@ class Logger():
     def append_analysis_csv(self, model: "model.Model"):
         "append model parameters in single line"
         self.analysis.write(
-            f"\n{model.name}, {model.voc}, {model.C}, {model.V}, {model.C/model.V}")
+            f"\n{model.name}, {model.voc}, {model.C}, {model.V}, {round(model.C/model.V, 4)}")
