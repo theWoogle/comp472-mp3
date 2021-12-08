@@ -1,20 +1,36 @@
 import model
 import numpy as np
-from logger import Logger
+import plotter
+import numpy as np
 
 if __name__ == "__main__":
 
-    # Download models --> Takes some minutes
-    google_300 = model.Model('word2vec-google-news-300')    
+    # Download dataset
+    synonyms = np.loadtxt('data/synonyms.csv', dtype=str,
+                          delimiter=',', skiprows=1)
 
-    # Download datasets
-    synonyms = np.loadtxt('data/synonyms.csv', dtype=str, delimiter=',', skiprows=1)
+    model_names = ['word2vec-google-news-300', 'glove-twitter-200', 'glove-wiki-gigaword-200',
+                   'glove-twitter-100', 'glove-twitter-50']
 
-    # Evaluate model 1 word2vec-google-news-300
-    google_300.evaluate(synonyms, 4)
+    models = []
+    models_accuracy = []
+    for name in model_names:
+        models.append(model.Model(name))
+    
+    print(f"Evaluating Models")
+    for model in models:
+        accuracy = model.evaluate(synonyms, 4)
+        models_accuracy.append(accuracy)
 
-    # Evaluate model 2 e.g. twitter-300
-    # Evaluate model 3 e.g. gigaword-300
-    # Evaluate model 4 e.g. wikipedia-300
-    # Evaluate model 5 e.g. wikipedia-1024
-    # Plot results
+    models_n = ['google300', 'twitter200', 'wiki200',
+                'twitter100', 'twitter50', 'humangs', 'randb']
+
+    # Human gold standard from moodle
+    models_accuracy.append(0.855)
+    # random guessing 1/4
+    models_accuracy.append(0.25)
+
+    plotter.Plotter(models_n, models_accuracy)
+
+    print(f"Models: \t{models_n}")
+    print(f"accuracies: \t{models_accuracy}")

@@ -18,7 +18,7 @@ class Model():
         self.l = logger.Logger(name)
 
     def download(self) -> None:
-        print(f"\nDownloading {self.name}")
+        print(f"Downloading {self.name}")
         if not os.path.exists(f'data/{self.name}.d2v'):
             self.model = api.load(self.name)
             self.model.save(f'data/{self.name}.d2v')
@@ -38,7 +38,6 @@ class Model():
         for i in range(len(dataset)):
             for j in range(feature_len):
                 # avoids key error when word is not in vocabulary
-                # FIXME change from try-except to check if word is in voc
                 try:
                     cosines[i, j] = round(self.model.similarity(
                         dataset[i, 0], dataset[i, 2+j]), 4)
@@ -46,7 +45,7 @@ class Model():
                     # guess probabilty later if word is unseen
                     # will result in 4x -1 if guess word raises exception
                     cosines[i, j] = -1
-                    pass                
+                    pass
 
             # guess probability if all words or question-word are unknown
             if all([round(x, 4) < 0 for x in cosines[i, :]]):
@@ -64,4 +63,4 @@ class Model():
                 dataset[i, 0], dataset[i, 1], dataset[i, idx_guess+2], label)
 
         self.l.append_analysis_csv(self)
-        return
+        return self.C/self.V
