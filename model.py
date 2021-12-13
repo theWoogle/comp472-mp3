@@ -47,13 +47,16 @@ class Model():
                     cosines[i, j] = -1
                     pass                
 
-            # guess probability if all words or question-word are unknown
+            # guess probability if all words or question-word are unknown = -1
             if all([round(x, 4) < 0 for x in cosines[i, :]]):
                 idx_guess = random.randint(0, 3)
                 label = 'guess'
             else:
+                # no guess -> increase V
                 self.V += 1
+                # select index with highest cosine/similarity
                 idx_guess = np.argmax(cosines[i, :])
+                # check if answer matches  provided solution
                 if dataset[i, idx_guess+2] == dataset[i, 1]:
                     self.C += 1
                     label = 'correct'
