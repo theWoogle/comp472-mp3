@@ -18,7 +18,7 @@ class Model():
         self.l = logger.Logger(name)
 
     def download(self) -> None:
-        print(f"\nDownloading {self.name}")
+        print(f"Downloading {self.name}")
         if not os.path.exists(f'data/{self.name}.d2v'):
             self.model = api.load(self.name)
             self.model.save(f'data/{self.name}.d2v')

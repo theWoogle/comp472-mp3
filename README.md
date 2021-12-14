@@ -1,7 +1,7 @@
 # comp472-mp3
 `https://github.com/theWoogle/comp472-mp3`  
 
-Run this programm with `python3 main.py`
+Run this programm with `python3 main.py` for the synonyms.csv dataset or with `python3 main.py True` for the test set
 ## Requirements
 GenSim is required to run this repo.
 
@@ -12,4 +12,4 @@ This repository contains 3 files in addition to main.py:
 * logger.py provides two functions to store results in the required .csv files
 
 * In `results` a bar plot with the accuracies (performance.pdf) and the analysis files can be found
-* `data` will store the downloaded models and synonym datasets but is not uploaded to git due to size constraints
+* `data` will store the downloaded models and synonym datasets but is not uploaded to git due to size constrai

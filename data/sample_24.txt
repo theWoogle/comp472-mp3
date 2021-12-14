@@ -1,0 +1,120 @@
+75.	sufficient
+a.	recent
+b.	physiological
+c.	enough
+d.	valuable
+c
+71.	percentage
+a.	volume
+b.	sample
+c.	proportion
+d.	profit
+c
+28.	arranged
+a.	planned
+b.	explained
+c.	studied
+d.	discarded
+a
+18.	issues
+a.	training
+b.	salaries
+c.	subjects
+d.	benefits
+c
+58.	command
+a.	observation
+b.	love
+c.	awareness
+d.	mastery
+d
+22.	spot
+a.	climate
+b.	latitude
+c.	sea
+d.	location
+d
+25.	easygoing
+a.	frontier
+b.	boring
+c.	farming
+d.	relaxed
+d
+27.	narrow
+a.	clear
+b.	freezing
+c.	thin
+d.	poisonous
+c
+16.	showed
+a.	demonstrated
+b.	published
+c.	repeated
+d.	postponed
+a
+53.	unlikely
+a.	improbable
+b.	disagreeable
+c.	different
+d.	unpopular
+a
+11.	salutes
+a.	information
+b.	ceremonies
+c.	greetings
+d.	privileges
+c
+2.	provisions
+a.	stipulations
+b.	interrelations
+c.	jurisdictions
+d.	interpretations
+a
+15.	fanciful
+a.	familiar
+b.	imaginative
+c.	apparent
+d.	logical
+b
+57.	hailed
+a.	judged
+b.	acclaimed
+c.	remembered
+d.	addressed
+b
+26.	debate
+a.	war
+b.	argument
+c.	election
+d.	competition
+b
+63.	perilous
+a.	binding
+b.	exciting
+c.	offensive
+d.	dangerous
+d
+74.	figure
+a.	list
+b.	solve
+c.	divide
+d.	express
+b
+60.	prospective
+a.	particular
+b.	prudent
+c.	potential
+d.	prominent
+c
+39.	hind
+a.	curved
+b.	muscular
+c.	hairy
+d.	rear
+d
+6.	flawed
+a.	tiny
+b.	imperfect
+c.	lustrous
+d.	crude
+b

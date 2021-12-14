@@ -11,11 +11,11 @@ class Logger():
         self.details.truncate(0)  # clear file
         self.details.write(f'Question, Answer, Guess, Label')
 
-    def append_details_csv(self, question: str, answer: str, guess: str, label: str):
+    def append_details_csv(self, question: str, answer: str, guess: str, label: str) -> None:
         "append parameters for each question in the Synonym Test dataset, in a single line"
         self.details.write(f'\n{question}, {answer}, {guess}, {label}')
 
-    def append_analysis_csv(self, model: "model.Model"):
+    def append_analysis_csv(self, model: "model.Model") -> None:
         "append model parameters in single line"
         self.analysis.write(
             f"\n{model.name}, {model.voc}, {model.C}, {model.V}, {round(model.C/model.V, 4)}")
